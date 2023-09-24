@@ -6,7 +6,21 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
+  const totalWithdrawals = [];
+  let totalClientWithdrawal = 0;
 
+  for (const client of array) {
+    if (client.withdrawals === 0 || client.withdrawals === undefined) {
+      totalWithdrawals.push(0);
+    } else {
+      for (const value of client.withdrawals) {
+        totalClientWithdrawal += value;
+      }
+      totalWithdrawals.push(totalClientWithdrawal);
+      totalClientWithdrawal = 0;
+    }
+  }
+  return totalWithdrawals;
 }
 
 // === TEST YOURSELF ===

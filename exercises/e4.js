@@ -5,10 +5,32 @@
 
 export function findMinValueInArray(array) {
   // Your code goes here...
+  let minVal = Number.POSITIVE_INFINITY;
+  if (!array) {
+    return "empty or no array given";
+  } else {
+    for (let num of array) {
+      if (num < minVal) {
+        minVal = num;
+      }
+    }
+  }
+  return minVal;
 }
 
 export function findMaxValueInArray(array) {
   // Your code goes here...
+  let maxVal = Number.NEGATIVE_INFINITY;
+  if (!array) {
+    return "empty or no array given";
+  } else {
+    for (let num of array) {
+      if (num > maxVal) {
+        maxVal = num;
+      }
+    }
+  }
+  return maxVal;
 }
 
 // === TEST YOURSELF ===
